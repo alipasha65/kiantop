@@ -1,0 +1,69 @@
+/* ==========================================================================
+   VEGA — THEME TOGGLE BUTTON  (روشن / تیره)
+   ========================================================================== */
+
+.theme-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:38px;
+    height:38px;
+    padding:0;
+    flex:0 0 auto;
+    cursor:pointer;
+    border-radius:8px;
+    border:1px solid rgba(148,163,184,.35);
+    background:transparent;
+    color:#94a3b8;
+    transition:color .2s, border-color .2s, background .2s, transform .2s;
+}
+
+.theme-btn:hover{
+    color:#22d3ee;
+    border-color:rgba(34,211,238,.65);
+    background:rgba(34,211,238,.08);
+    transform:none;
+}
+
+.theme-btn:active{ transform:translateY(1px); }
+
+.theme-btn svg{
+    width:17px;
+    height:17px;
+    stroke:currentColor;
+    fill:none;
+    stroke-width:1.8;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+}
+
+.theme-btn .ico-moon{ display:none; }
+
+html[data-theme="light"] .theme-btn{
+    color:#64748b;
+    border-color:rgba(15,23,42,.18);
+}
+
+html[data-theme="light"] .theme-btn:hover{
+    color:#7c3aed;
+    border-color:rgba(124,58,237,.6);
+    background:rgba(124,58,237,.07);
+}
+
+html[data-theme="light"] .theme-btn .ico-sun{ display:none; }
+html[data-theme="light"] .theme-btn .ico-moon{ display:block; }
+
+/* دکمهٔ شناور برای صفحهٔ ورود که تاپ‌بار ندارد */
+.theme-btn.floating{
+    position:fixed;
+    top:18px;
+    right:18px;
+    z-index:999;
+    background:rgba(10,14,26,.55);
+    backdrop-filter:blur(8px);
+}
+
+html[data-theme="light"] .theme-btn.floating{
+    background:rgba(255,255,255,.8);
+    box-shadow:0 6px 20px -12px rgba(15,23,42,.6);
+}
